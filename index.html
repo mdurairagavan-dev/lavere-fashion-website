@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="LAVÉRE — a responsive fashion store frontend project.">
+<title>LAVÉRE | Modern Fashion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playball&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announcement">Free shipping on orders over ₹1,999 <span>•</span> Easy 7-day returns</div>
+<header class="navbar" id="top">
+<a href="#home" class="logo" aria-label="LAVÉRE home">LAVÉRE</a>
+<nav class="desktop-nav" aria-label="Primary navigation"><a href="#home">Home</a><a href="#products">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<div class="nav-actions">
+<button class="icon-btn" id="cartBtn" aria-label="Open shopping cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge" id="cartCount">0</span></button>
+<button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="sideNavbar" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+</div></header>
+<aside class="side-navbar" id="sideNavbar" aria-hidden="true"><div class="side-head"><span class="logo">LAVÉRE</span><button class="icon-btn" id="closeBtn" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button></div><nav aria-label="Mobile navigation"><a href="#home">Home</a><a href="#products">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></nav></aside>
+<div class="backdrop" id="backdrop"></div>
+<main>
+<section class="hero" id="home"><div class="hero-content"><p class="eyebrow">NEW COLLECTION 2026</p><h1>Style that feels <span>like you.</span></h1><p class="hero-text">Thoughtful everyday fashion with clean silhouettes, comfortable fabrics and timeless details.</p><div class="hero-actions"><a href="#products" class="primary-btn">Shop collection <i class="fa-solid fa-arrow-right"></i></a><a href="#about" class="text-link">Our story</a></div><div class="hero-stats"><div><strong>50+</strong><span>Curated pieces</span></div><div><strong>4.8/5</strong><span>Customer rating</span></div></div></div><div class="hero-image"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85" alt="Model wearing a modern fashion outfit" fetchpriority="high"></div></section>
+<section class="features" aria-label="Store benefits"><div><i class="fa-solid fa-truck-fast"></i><div><h3>Fast Delivery</h3><p>Quick delivery to your doorstep.</p></div></div><div><i class="fa-solid fa-shield-heart"></i><div><h3>Quality First</h3><p>Pieces selected with care.</p></div></div><div><i class="fa-solid fa-rotate-left"></i><div><h3>Easy Returns</h3><p>Simple 7-day returns.</p></div></div></section>
+<section class="products-section" id="products"><div class="section-heading"><div><p class="eyebrow">OUR COLLECTION</p><h2>Find your everyday style.</h2></div><div class="shop-tools"><label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="searchInput" type="search" placeholder="Search products" aria-label="Search products"></label><select id="sortSelect" aria-label="Sort products"><option value="default">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option><option value="name">Name: A–Z</option></select></div></div>
+<div class="filters" role="group" aria-label="Product categories"><button class="filter-btn active" data-category="all">All</button><button class="filter-btn" data-category="men">Men</button><button class="filter-btn" data-category="women">Women</button><button class="filter-btn" data-category="accessories">Accessories</button></div>
+<div class="product-grid" id="productGrid"></div><p class="no-results" id="noResults" hidden>No products match your search.</p></section>
+<section class="promo"><div><p class="eyebrow">WEEKEND EDIT</p><h2>Build a wardrobe you actually wear.</h2><p>Mix relaxed basics with polished essentials and keep every outfit effortless.</p><a href="#products" class="primary-btn">Explore pieces</a></div><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80" alt="Fashion shopping collection" loading="lazy"></section>
+<section class="about" id="about"><div><p class="eyebrow">ABOUT LAVÉRE</p><h2>Less noise. More style.</h2></div><div><p>LAVÉRE is a fictional fashion store created as a portfolio-quality frontend project. The interface demonstrates responsive design, dynamic rendering, search, filtering, sorting, cart state, localStorage, forms, accessibility and polished UI interactions.</p><div class="about-points"><span><i class="fa-solid fa-check"></i> Responsive</span><span><i class="fa-solid fa-check"></i> Accessible</span><span><i class="fa-solid fa-check"></i> Persistent cart</span></div></div></section>
+<section class="newsletter" id="contact"><p class="eyebrow">STAY UPDATED</p><h2>Get new drops in your inbox.</h2><p>One useful email when we launch something new. No spam.</p><form id="newsletterForm" novalidate><label class="sr-only" for="email">Email address</label><input type="email" id="email" placeholder="you@example.com" autocomplete="email" required><button type="submit">Subscribe</button></form><p id="formMessage" class="form-message" role="status"></p></section>
+</main>
+<div class="cart-overlay" id="cartOverlay" aria-hidden="true"><aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="cart-header"><div><p class="eyebrow">YOUR BAG</p><h2 id="cartTitle">Shopping Cart</h2></div><button class="icon-btn" id="closeCart" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button></div><div id="cartItems" class="cart-items"></div><div class="cart-summary"><div><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div><div><span>Delivery</span><strong id="cartDelivery">₹0</strong></div><div class="total"><span>Total</span><strong id="cartTotal">₹0</strong></div><button id="checkoutBtn" class="primary-btn full-btn">Checkout</button><p class="small-note">Demo checkout — no payment is processed.</p></div></aside></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<footer><div><a href="#top" class="logo">LAVÉRE</a><p>Simple fashion for everyday life.</p></div><div class="footer-links"><a href="#products">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></div><p>© 2026 LAVÉRE. Frontend portfolio project.</p></footer>
+<a href="#top" class="back-top" id="backTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+<script src="index.js"></script>
+</body></html>
